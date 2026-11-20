@@ -252,6 +252,6 @@ curl -X POST http://localhost:8000/api/scans/ -H "Authorization: Bearer $TOKEN" 
 - **DNS rebinding.** The hostname is resolved once for validation and again by `requests`. A fix is to connect to the already-validated IP address directly.
 - Scans run synchronously. **Celery + Redis** would allow background scans and scheduled re-scans.
 - Some cookies (like CSRF tokens) legitimately skip `HttpOnly`, so cookie findings need human review.
-- Possible additions: weak cipher detection, CORS misconfiguration checks, a PDF report export, and a React dashboard.
+
 
 > Only scan websites you own or have permission to test. SecureScan sends normal `GET` requests and reads response headers, the same as a browser.
